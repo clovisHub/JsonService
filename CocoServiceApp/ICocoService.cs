@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CocoServiceApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -13,8 +14,29 @@ namespace CocoServiceApp
     public interface ICocoService
     {
         [OperationContract]
-        [WebInvoke(Method = "GET",UriTemplate ="/bakisa/{mutu}", RequestFormat = WebMessageFormat.Json,
+        [WebInvoke(Method = "POST",UriTemplate ="/bakisa/{people}", RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
-        String lakisaMutu(String mutu);
+        String bakisaMutu(ICocoPeople people);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/bakisa/{mutu}", RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
+        String lukaMutu(Int16 mutu);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/bakisa", RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
+        List<ICocoPeople> zuaMutu();
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/bakisa/{longola}", RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
+        String longolaMutu(Int16 longola);
     }
 }
+
+
+
+
+
+

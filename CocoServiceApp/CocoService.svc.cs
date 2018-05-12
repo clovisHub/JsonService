@@ -11,9 +11,25 @@ namespace CocoServiceApp
     // NOTE: In order to launch WCF Test Client for testing this service, please select CocoService.svc or CocoService.svc.cs at the Solution Explorer and start debugging.
     public class CocoService : ICocoService
     {
-        public string lakisaMutu(string mutu)
+     
+        public string bakisaMutu(Models.ICocoPeople people)
         {
-            return "Mutu yeyo : "+ mutu;
+            throw new NotImplementedException();
+        }
+
+        public string lukaMutu(short mutu)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Models.ICocoPeople> zuaMutu()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string longolaMutu(short longola)
+        {
+            throw new NotImplementedException();
         }
     }
 }
